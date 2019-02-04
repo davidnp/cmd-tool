@@ -1,0 +1,7 @@
+#ifndef VERSION_H
+#define VERSION_H
+
+#define cmd_tool_VERSION_MAJOR ${cmd_tool_VERSION_MAJOR}
+#define cmd_tool_VERSION_MINOR ${cmd_tool_VERSION_MINOR}
+
+#endif //VERSION_H
