@@ -14,8 +14,10 @@
 #endif
 
 #include <iostream>
+using namespace std;
 
 #include <string>
+#include <vector>
 
 #if defined _WINDOWS
 
@@ -23,17 +25,33 @@
 
 #endif
 
+/*
+class CommandLineApp {
+	public:
+		CommandLineApp();
+		~CommandLineApp();
+
+		void RunApi(int argc, char *argv[]);
+
+	private:
+		bool SendCommand(const char* command, const char* args)
+}
+*/
+
 std::string globalAnswer="";
 
-void RunApi(const char* command, const char* args);
+void RunApi(int argc, char *argv[]);
 
 
 
 int main ( int argc, char *argv[] ) {
-	printf("\n**** CMD-TOOL v%d.%d ****\n", cmd_tool_VERSION_MAJOR, cmd_tool_VERSION_MINOR);
+	char headerLog[64];
+	sprintf(headerLog, "**** CMD-TOOL v%d.%d ****", cmd_tool_VERSION_MAJOR, cmd_tool_VERSION_MINOR);
+	string strHeaderLog = headerLog;
+	cout << headerLog << endl;
 
-	if(argc == 3) {
-		RunApi(argv[1], argv[2]);
+	if(argc >= 2) {
+		RunApi(argc, argv);
 	}
 	else {
 		std::cout << "Usage:" << std::endl;
@@ -45,22 +63,23 @@ int main ( int argc, char *argv[] ) {
 
 
 
-bool SendCommand(const char* command, const char* args) {
+bool SendCommand(int command, vector<string> parameters) {
 	bool error = false;
 
-	int intCommand = atoi(command);
-	switch (intCommand) {
+	switch (command) {
 		case 0:
-			globalAnswer = "Hello 0";
+			globalAnswer = "Hello 0 ";
 			break;
 
 		case 1:
-			globalAnswer = "Hello 1";
+			globalAnswer = "Hello 1 ";
 			break;
 
 		default: error = true;
 	}
-
+	for (auto parameter : parameters) {
+		globalAnswer.append(parameter);
+	}
 
 	return !error;
 }
@@ -75,8 +94,13 @@ void RetrieveAnswer(std::string& answer) {
 
 
 
-void RunApi(const char* command, const char* args) {
-	if(SendCommand(command, args)) {
+void /*CommandLineApp::*/RunApi(int argc, char *argv[]) {
+	int command = atoi(argv[1]);
+	vector<string> parameters;
+	for (int i = 2; i < argc; i++) {
+		parameters.push_back(argv[i]);
+	}
+	if(SendCommand(command, parameters)) {
 		std::string answer;
 		RetrieveAnswer(answer);
 

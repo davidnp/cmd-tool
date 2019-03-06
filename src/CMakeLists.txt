@@ -1,4 +1,4 @@
-set(PROJECT_NAME CmdTool)
+set(PROJECT_NAME cmd-tool)
 
 set(cmd_tool_VERSION_MAJOR 1)
 set(cmd_tool_VERSION_MINOR 0)
