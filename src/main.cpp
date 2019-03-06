@@ -1,16 +1,6 @@
-#include "stdafx.h"
-
-#include <stdio.h>
-#include <stdlib.h>
+#include <iostream>
 
 #include "version.h"
-
-#include <iostream>
-using namespace std;
-
-#include <string>
-#include <vector>
-
 #include "CommandLineApp.h"
 
 int main ( int argc, char *argv[] ) {
