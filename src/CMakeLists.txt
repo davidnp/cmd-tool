@@ -19,15 +19,11 @@ set(HEADERS version.h)
 
 set(SOURCES
 	main.cpp
+	CommandLineApp.cpp
 )
 
-if(MSVC)
-	set(SOURCES ${SOURCES}
-	)
-else()
-	set(SOURCES ${SOURCES}
-	)
-endif()
+set(SOURCES ${SOURCES}
+)
 
 if(Linux_ARM)
 	link_directories(
