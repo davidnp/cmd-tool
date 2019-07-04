@@ -3,5 +3,6 @@
 
 #define cmd_tool_VERSION_MAJOR ${cmd_tool_VERSION_MAJOR}
 #define cmd_tool_VERSION_MINOR ${cmd_tool_VERSION_MINOR}
+#define cmd_tool_VERSION_PATCH ${cmd_tool_VERSION_PATCH}
 
 #endif //VERSION_H

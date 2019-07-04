@@ -1,6 +1,6 @@
 set(PROJECT_NAME cmd-tool)
 
-set(cmd_tool_VERSION_MAJOR 1)
+set(cmd_tool_VERSION_MAJOR 2)
 set(cmd_tool_VERSION_MINOR 0)
 set(cmd_tool_VERSION_PATCH 0)
 set(EXE_VERSION ${cmd_tool_VERSION_MAJOR}.${cmd_tool_VERSION_MINOR}.${cmd_tool_VERSION_PATCH})
