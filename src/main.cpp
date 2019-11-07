@@ -3,6 +3,14 @@
 #include "version.h"
 #include "CommandLineApp.h"
 
+
+class Point {
+	public:
+	string y;
+	int x;
+};
+
+
 int main ( int argc, char *argv[] ) {
 	char headerLog[64];
 	sprintf(headerLog, "**** CMD-TOOL v%d.%d.%d ****", 
@@ -21,6 +29,12 @@ int main ( int argc, char *argv[] ) {
 		std::cout << "Usage:" << std::endl;
 		std::cout << "cmd-tool command commandArgs" << std::endl;
 	}
+
+
+	///////
+
+	Point p{"2", 3};
+
 
 	return 0;
 }

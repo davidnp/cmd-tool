@@ -14,6 +14,12 @@ class CommandLineApp {
 
 	private:
 		bool SendCommand(int command, vector<string> parameters, string& answer);
+		string ConcatenateVectorToString(vector<string> wordsVector);
+		string TestArray(vector<string> parameters);
+		string SumVector(vector<string> parameters);
+		string SumCIN();
+
+		string HttpTest();
 };
 
 #endif //CommandLineAppH
